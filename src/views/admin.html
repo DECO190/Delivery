@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/admin.css"> 
+    <link rel="stylesheet" href="/css/scroll.css"> 
+    <link rel="stylesheet" href="/css/animations.css"> 
+</head>
+<body onload = 'getInfo()'>
+    <header class="filter-container">
+        <h1>FILTRO: </h1>
+        <input onclick = 'filter(event)' type="radio" name="filter-option" id="filter1">
+        <label for="filter1">Aguardando Verificação</label>
+        <input onclick = 'filter(event)' type="radio" name="filter-option" id="filter2" checked>
+        <label for="filter2">Todos os pedidos</label>
+        <input onclick = 'filter(event)' type="radio" name="filter-option" id="filter3">
+        <label for="filter3">Pedidos Finalizados</label>
+        <input onclick = 'filter(event)' type="radio" name="filter-option" id="filter4">
+        <label for="filter4">Pedidos em Andamento</label>
+    </header>
+    
+    
+    <div class="askInfo-container" style="display: none; z-index: 10000000;">
+        <img onclick = 'closeInfo()' class = 'closeAsk' src="/images/close.svg" alt="">
+        <span class="requestid" style="display: none;"></span>
+        <main>
+            <header>
+                <img onclick = 'getUser()' src="/images/user.svg" alt="">
+            </header>
+            <div class="ask-foods">
+                <h1 class="total"></h1>
+                <div class="ask-container">
+                    
+                </div>
+                <div class="textInfos">
+                   
+                </div>
+                <div class="attStatus-container">
+                    <h1>Status do pedido: </h1>
+                    <div onclick = 'changeStt(event)' class="attStatus Sapprove">
+                        Aprovar pedido!
+                    </div>
+                    <div onclick = 'changeStt(event)' class="attStatus Sreject">
+                        Rejeitar pedido!
+                    </div>
+                    <div onclick = 'changeStt(event)' class="attStatus Spreparing">
+                        Pedido sendo preparado!
+                    </div>
+                    <div onclick = 'changeStt(event)' class="attStatus Sout">
+                        Pedido saiu para entrega!
+                    </div>
+                    <div onclick = 'changeStt(event)' class="attStatus Sdone">
+                        Pedido entregue!
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="white-screen"  style="display: none;"></div>
+
+    <div class="request-container">
+       
+    </div>
+
+    <script src="/scripts/admin.js"></script>
+</body>
+</html>

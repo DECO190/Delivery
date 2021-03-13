@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img class = 'logo' src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/902/4504111902_796b730a-98d1-43a6-829d-1941fd8cb1b6.png?cb=1611541977" alt="">
+            <div class="menu-link">
+                <a href="">Inicio</a>
+                <a href="">Sobre</a>
+                <a href="">Cardapio</a>
+                <a href="">Contato</a>
+                <a href="">Delivery</a>
+                <a href="/followAsk">Meu pedido</a>
+            </div>
+            <img onclick = 'showMore()' class = 'plus-icon' src="/images/list.svg" alt="">
+        </div>
+    </header>
+    
+    <div class="more-container">
+        
+        <a href="">Inicio</a>
+        <div class="linha"></div>
+        <a href="">Sobre</a>
+        <div class="linha"></div>
+        <a href="">Cardapio</a>
+        <div class="linha"></div>
+        <a href="">Contato</a>
+        <div class="linha"></div>
+        <a href="">Delivery</a>
+    </div>
+    <main>
+        <div class="aside-container">
+            <aside class = 'text-aside'>
+                <img src="/images/logo_pad_white.png" alt="">
+                <p>Peça por delivery agora!</p>
+                <div class="delivery-bttn" onclick = 'window.location.href = "/menu"'>
+                    <img src="/images/moto.svg" alt="">
+                </div>
+            </aside>
+
+            <aside class="img-aside">
+            </aside>
+        </div>
+    </main>
+
+    <script src = '/scripts/index.js'></script>
+</body>
+</html>

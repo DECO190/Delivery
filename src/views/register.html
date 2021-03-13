@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/log_reg.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script type="text/javascript">
+            $(document).ready(function() {
+              $("#phone").inputmask({
+                mask: ["(99) 9999-9999", "(99) 99999-9999", ],
+                keepStatic: true
+              });
+
+              $("#cpf").inputmask({
+                mask: ["999.999.999-99"],
+                keepStatic: true
+              });
+            });
+        </script>
+        <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        #reg_link {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #login_form {
+            height: min-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #main_container {
+            height: min-content;
+            margin-top: 25px;
+        }
+
+        #login_form button {
+            height: 50px;     
+            margin-top: 40px;       
+        }
+        #int_container p {
+            font-size: 26pt;
+            margin-top: 10px;
+        }
+
+        #login_title h1 {
+            font-size: 34pt;
+        }
+
+        #login_title {
+            height: 60px;
+        }
+
+        #int_container {
+            height: 100%;
+        }
+         </style>
+</head>
+<body onload="loginPageCheck()">
+    <div name = 'userform' id = 'login_form'>
+        <div id = 'main_container'>
+            <div id = 'login_title'>
+                <h1>Cadastro</h1>
+            </div>
+
+            <div id = 'int_container'>
+                <p>Username:</p>
+                <input id = 'username' type="text">
+                <p>Senha:</p>
+                <input id = 'password' type="password">
+                <p>Nome:</p>
+                <input id = 'name' type="text">
+                <p>Telefone:</p>
+                <input id = 'phone' type="text">
+                <p>CPF:</p>
+                <input id = 'cpf' type="text">
+            </div>
+            <button onclick="createAccount()">Criar Conta</button>
+        </div> 
+    </div>
+    <a id = 'reg_link' href="/login">Já possui uma conta? Faça login.</a>
+
+    <script src="/scripts/register.js"></script>
+   
+</body>
+</html>

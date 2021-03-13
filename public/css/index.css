@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+/* #C12F2F */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    background-color: white;
+    height: 110px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 85%;
+    max-width: 1500px;
+}
+
+.logo {
+    height: 50px;
+}
+
+
+.menu-link a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    margin: 15px;
+    font-size: 16px;
+    transition: 500ms;
+}
+
+.menu-link a:hover {
+    font-size: 20px;
+    color: #C12F2F ;
+    padding-bottom: 10px;
+}
+
+main {
+    background-color: #C12F2F;
+    height: 500px;
+}
+
+.aside-container {
+    width: 100vw;
+    height: calc(100vh - 110px);
+    display: flex;
+    
+}
+
+.text-aside {
+    width: 40%;
+    height: 100%;
+    background-color:#C12F2F;
+    background-image: url('/images/vitrine.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-aside > img {
+    height: 40px;
+}
+
+.text-aside p {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 200; 
+    font-size: 20pt;
+    margin-top: 15px;
+}
+
+.delivery-bttn {
+    background-color: white;
+    height: 50px;
+    width: 250px;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 450ms;
+}
+
+.delivery-bttn:hover {
+    opacity: 80%;
+}
+
+.delivery-bttn img{
+    height: 40px;
+}
+
+.img-aside {
+    width: 60%;
+    background-image: url('/images/restaurante.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.smp-logo {
+    display: none;
+}
+
+.plus-icon {
+    display: none;
+}
+
+.more-container {
+    background-color: white;
+    position: absolute;
+    height: 40%;
+    width: 90%;
+    top: 100px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.more-container a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: rgb(44, 44, 44);
+    font-weight: 600;
+    margin: 15px;
+    font-size: 18pt;
+    transition: 500ms;
+}
+
+.linha {
+    height: 2px;
+    width: 70%;
+    background-color: #C12F2F;
+}
+
+.more-container {
+    display: none;
+}
+
+
+@media (max-width: 950px) {
+
+    header {
+        height: 70px;
+    }
+
+    .aside-container {
+        height: calc(100vh - 70px);
+    }
+    
+
+    .aside-container {
+        flex-direction: column;
+    }
+    .img-aside {
+        width: 100vw;
+        height: 50%;
+    }
+
+    .text-aside {
+        width: 100vw;
+        height: 50%;
+    }
+
+    .text-aside p {
+        font-size: 18pt;
+    }
+
+    .menu-link a {
+        display: none
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .smp-logo {
+        display: block;
+    }
+
+    .plus-icon {
+        cursor: pointer;
+        height: 50px;
+        display: block;
+    }
+
+}

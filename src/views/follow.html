@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/follow.css">
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body onload="verify()">
+    <aside>
+        <img src="/images/back.svg" alt="" onclick="window.location.href = '/'">
+        <img src="" alt="">
+    </aside> 
+    <div class="nologin" style = 'display: none;'>
+        <div class="animation-container-nologin">
+            <h1>Ops...</h1>
+            <p class="explain-nologin">Parece que você não tem uma conta!</p>
+            <p class="makeAccount-nologin">Crie sua conta agora mesmo e tenha acesso ao delivery!</p>
+            <button onclick= "window.location.href = '/register'">RESGITRAR></button>
+            <button onclick= "window.location.href = '/login'">LOGIN></button>
+        </div>
+    </div>
+
+    <div class="white-screen"></div>
+
+    <div class = 'hasAsk' style = 'display: none;'>
+        <div class="animation-container-nologin">
+            <h1>Ops...</h1>
+            <p class="explain-nologin">Você não tem nenhum pedido em andamento!</p>
+            <p class="makeAccount-nologin">Peça um deliciosa comida agora mesmo!</p>
+            <button onclick= "window.location.href = '/'" >Menu></button>
+        </div>
+    </div>
+
+    <div class="ask-container">
+        <main>
+            <header class="titleHeader">
+                <h1>Meu Pedido:</h1>
+            </header>
+            <div class="request-foods">
+                <div class="request-container">
+                </div>
+            </div>
+            <div class="ask-informations-container adapt">
+                <div class="linha-vert-container">
+                    <div class="linha-vert"></div>
+                </div>
+                <div class="ask-informations-text-container">
+                    <p class="ask-time ask-text">> Pedido feito as: <strong>12:30</strong></p>
+                    <p class="ask-token ask-text">> Token do pedido: <strong>sad4sadw78e7qw654e21ewqdf7ewr</strong></p>
+                    <p class="ask-total ask-text">> Total: <strong>R$ 154.00</strong></p>
+                    <p class="ask-obs ask-text">> <strong>OBSERVAÇÃO:</strong> Por favor vir com sal o peixe e a batata frita também, tirar cebola do hamburger, e a carne se possivel ao ponto pra mal e enviar talheres por favor</>
+                </div>
+            </div>
+
+            <div class="status-container">
+                <h1>Status do Pedido</h1>
+                <p class="status-text">> Seu pedido está sendo aprovado!</p>
+                <img class = 'status-image' src="/images/delivery.gif" alt="">
+                <button style = 'display: none;' onclick = 'consent()' class="consentBttn">CONSENTIR</button>
+                <p class="knowMore">Para mais detalhes sobre o seu pedido ligue: (11) 59888-1458</p>
+            </div>
+        </main> 
+    </div>
+
+
+    <script src = '/scripts/follow.js'></script>
+</body>
+</html>

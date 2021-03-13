@@ -1,0 +1,109 @@
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes up {
+    from {
+        transform: translateY(100%)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes up2 {
+    from {
+        transform: translateY(150%)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes down {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+@keyframes moveAppear {
+    from { 
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.appear {
+    animation-name: appear;
+    animation-duration: 800ms;
+    animation-fill-mode: backwards; 
+}
+
+.down {
+    animation-name: down;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+}
+
+.up {
+    animation-name: up;
+    animation-duration: 1s;
+    animation-fill-mode: backwards; 
+}
+
+/* .request {
+    animation-name: moveAppear;
+    animation-duration: 1.5s;
+} */
+
+.final-input {
+    animation-name: moveAppear;
+    animation-duration: 500ms;
+    animation-delay: 10ms;
+}
+
+.info-container { 
+    animation-name: up;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;  
+}
+
+.more-container {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-fill-mode: backwards; 
+}
+
+.animation-container-nologin {
+    animation-name: up2;
+    animation-duration: 1.5s;
+    animation-fill-mode: backwards;  
+}

@@ -1,0 +1,445 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    
+}
+
+body {
+    display: flex;
+    height: 150vh;
+    overflow: hidden;
+}
+
+body > aside {
+    position: fixed;
+    height: 70vh;
+    background-color: #C12F2F;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 10px 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+body > aside img {
+    height: 60px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* ==================================== */
+
+.ask-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.ask-container main {
+    height: max-content;
+    width: 60%;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 0 20px 20px 20px;
+    overflow-y: scroll;
+}
+
+.ask-container main header {
+    height: 80px;
+    width: 100%;
+    background-color: #C12F2F;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+
+/* ============================================== */
+
+
+.request-container {
+    height: 300px;
+    width: 98%;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    padding: 0px;
+    overflow-x: hidden;
+    border: 2px solid #C12F2F;
+}
+
+
+.request {
+    height: 150px;
+    width: 80%;
+    padding: 15px;
+    border-bottom: 1px solid #dfdfdf;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.request h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #535353;
+}
+
+.first-text-container {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #C12F2F;
+}
+
+
+.first-text-container h1 {
+    font-size: 40px;
+}
+
+.quant-text {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.quant-num {
+    color: #C12F2F !important;
+}
+
+.food-name {
+    font-size: 40px;
+}
+
+
+/* ============================================ */
+
+.ask-informations-container {
+    width: 100%;
+    padding: 20px;
+    height: 270px;
+    display: flex;
+}
+
+.linha-vert-container {
+    height: 100%;
+}
+
+.linha-vert {
+    height: 100%;
+    width: 2px;
+    background-color: rgb(197, 197, 197);
+
+}
+
+.ask-text {
+    font-family: 'Poppins', sans-serif;
+    color:  rgb(100, 100, 100);
+    margin-left: 15px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+/* ========================================= */
+
+
+.status-container {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.status-container > h1 {
+    border-top: 2px solid rgb(197, 197, 197);
+    width: 80%;
+    color: #C12F2F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.status-container > p {
+    font-family: 'Poppins', sans-serif;
+    color:  rgb(100, 100, 100);
+    font-size: 25px;
+    margin: 20px;
+    letter-spacing: 2px;
+}
+
+/* ================================================ */
+
+.nologin {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.nologin h1 {
+    font-size: 64pt;
+    color: #C12F2F;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.explain-nologin {
+    font-size: 20pt;
+    color: #C12F2F;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+
+.makeAccount-nologin {
+    font-size: 14pt;
+    color: #5A5A5A;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.nologin button {
+    height: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: white;
+    width: 250px;
+    margin: 20px;
+    outline: none;
+    border: none;
+    background-color: #C12F2F;
+    border-radius: 25px;
+    font-size: 25pt;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.nologin button:hover {
+    background-color: #a72323;
+}
+
+.animation-container-nologin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    flex-direction: column;
+}
+
+.white-screen {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: white;
+    opacity: 80%;
+    z-index: 999;
+}
+
+/* ============================================== */
+
+.hasAsk {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hasAsk button {
+    height: 110px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: white;
+    width: 280px;
+    margin: 20px;
+    outline: none;
+    border: none;
+    background-color: #C12F2F;
+    border-radius: 25px;
+    font-size: 25pt;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.hasAsk button:hover {
+    background-color: #a72323;
+}
+
+.hasAsk h1 {
+    font-size: 64pt;
+    color: #C12F2F;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* ================================================== */
+
+.status-image {
+    width: 180px;
+}
+
+
+.consentBttn {
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 100px;
+    background-color: #C12F2F;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.consentBttn:hover {
+    height: 120px;
+    width: 81%;
+    background-color: #b32d2d;
+    font-size: 30px;
+}
+
+/* ================================================== */
+
+.knowMore {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px !important;
+    letter-spacing: 0px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= */
+
+
+@media (min-width: 769px) {
+    .food:hover {
+        height: 155px;
+        width: 96%;
+    }
+    
+}
+
+@media(max-width: 1000px) {
+    /* .ask-informations-container {
+        height: 275px;
+    } */
+    .ask-container  main {
+        width: 80%;
+    }
+}
+
+@media(max-width: 680px) {
+    .ask-container  main {
+        width: 90%;
+    }
+    .ask-text {
+        font-size: 16px;
+    }
+}
+
+@media( max-width: 768px) {
+    .ask-container main {
+        width: 100%;
+    }
+    .request {
+        width: 95%;
+    }
+
+    .food-name {
+        font-size: 25px;
+    }
+
+    .first-text-container h1 {
+        font-size: 30px;
+    }
+
+    .quant-text {
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .ask-container main header {
+        height: 70px;
+        font-size: 20px;
+    }
+    
+    .ask-container  main {
+        width: 90%;
+        padding: 0 10px 10px 10px;
+    }
+}
+
+
+
+@media(max-width: 425px) {  
+    .ask-container main {
+        width: 100%;
+        padding: 0  3px 3px;
+    }
+
+    .ask-text {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 600px) {  
+    .ask-text {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1200px) {
+    body > aside {
+        display: none;
+    }
+}
+

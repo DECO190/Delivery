@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $("#final-cep").inputmask({
+            mask: ["99999-999","99999-999" ],
+            keepStatic: true
+          });
+        });
+    </script>
+</head>
+<body onload="verify()">
+    <div class = 'hasAsk' style = 'display: none;'>
+        <div class="animation-container-nologin">
+            <h1>Ops...</h1>
+            <p class="explain-nologin">Você tem um pedido em andamento!</p>
+            <p class="makeAccount-nologin">Para entrar em contato com o restaurante ligue: (99524-8574)</p>
+            <button onclick = 'window.location.href = "/followAsk"' >Acompanhar Pedido></button>
+        </div>
+    </div>
+
+    <div class="nologin" style = 'display: none;'>
+        <div class="animation-container-nologin">
+            <h1>Ops...</h1>
+            <p class="explain-nologin">Parece que você não tem uma conta!</p>
+            <p class="makeAccount-nologin">Crie sua conta agora mesmo e tenha acesso ao delivery!</p>
+            <button onclick= "window.location.href = '/register'">RESGITRAR></button>
+            <button onclick= "window.location.href = '/login'">LOGIN></button>
+        </div>
+    </div>
+    <div class="white-screen"></div>
+
+    <div class="info-container" style="display: none;">
+        <main id = 'infomain'>
+            <div class="close-container" onclick="closeInfo()">
+                <img class = 'close-info' src="/images/close.svg" alt="">
+            </div>
+            <div class = 'image-info'></div>
+
+            <span style = 'display: none;' class="food-id"></span>
+
+            <h1 class="info-h1"></h1>
+
+            <p class="info-desc"></p>
+            
+            <div class="quant-container">
+                <p>Quantidade: </p>
+                <div class="quant">
+                    <img onclick = 'moreQuant()' src="/images/more.svg" alt="">
+                    <p id = 'quant-value'>0</p>
+                    <img onclick = 'lessQuant()' src="/images/less.svg" alt="">
+                </div>
+            </div>
+            
+            <button onclick = 'foodAdd()' class="add-bttn">ADICIONAR</button>
+        </main>
+    </div>
+
+    <aside>
+        <img src="/images/back.svg" alt="" onclick="window.location.href = '/'">
+        <img src="" alt="">
+    </aside> 
+    <div class="content-container">
+        <main class="filter">
+            <header>
+                <div class="header-img"></div>
+                <div class="header-menu">
+                    <a href="#entradas">Entradas</a>
+                    <a href="">Pratos</a>
+                    <a href="">Lanches</a>
+                    <a href="">Sobremesa</a>
+                    <a href="">Bebidas</a>
+                </div>
+            </header>
+            
+            <div id = 'entradas' class = 'food-section'>
+                <h1>Entradas</h1>
+                <div class = 'food-container'>
+                    <div class = 'food' onclick="openFood(event)">
+                        <div class = 'image' style="background: url('/images/comida/batata.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+
+                        <div class="text">
+                            <span style="display: none;">1</span>
+                            <span style="display: none;">/images/comida/batata.jpg</span>
+                            <h1>Batata Frita</h1>
+                            <p>
+                                Batatas fritas com corte fino especial crocantes e sequinhas com rub especial da casa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'food-container'>
+                    <div class = 'food' onclick="openFood(event)">
+                        <div class = 'image' style="background: url('/images/comida/picanha.jfif'); background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+    
+                        <div class="text">
+                            <span style="display: none;">2</span>
+                            <span style="display: none;">/images/comida/picanha.jfif</span>
+                            <h1>Picanha Fatiada</h1>
+                            <p>
+                                Picanha de corte nobre assada na grelha, com sal dos alpes
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'food-container'>
+                    <div class = 'food' onclick="openFood(event)">
+                        <div class = 'image' style="background: url('/images/comida/pastel.png'); background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+    
+                        <div class="text">
+                            <span style="display: none;">3</span>
+                            <span style="display: none;">/images/comida/pastel.png</span>
+                            <h1>Porção de Pasteis</h1>
+                            <p>
+                                Pasteis fritos com sabores mistos, entre eles: Carne, Queijo, Palmito, Calabresa, Bauru, Camarão 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'food-container'>
+                    <div class = 'food' onclick="openFood(event)">
+                        <div class = 'image' style="background: url('/images/comida/frango.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+    
+                        <div class="text">
+                            <span style="display: none;">4</span>
+                            <span style="display: none;">/images/comida/frango.jpg</span>
+                            <h1>Frango a Passarinho</h1>
+                            <p>
+                                Frango a Passarinho frito com temperos e especiarias da casa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </main>
+        <div class="cart-container"  style="display: none;">
+            <main>
+                <img class="close-cart" onclick = 'closeCart()' src="/images/close.svg" alt="">
+                <h1>Meu carrinho</h1>
+                <div class= 'request-container'>
+                    <div class="cart-total">
+                       <h1 id = 'total-cart-text'>Total: R$ 00</h1> 
+                    </div>
+                </div>
+                <textarea maxlength = '240' id="obs" placeholder="Adicionar observações aos seus pedidos..."></textarea>
+                
+                <div class="end-request">
+                    <p onclick="openFinal()">Finalizar Pedido!</p>
+                </div>
+            </main>
+        </div>
+
+        <div class="final-container end" style="display: none;">
+            <main>
+                <img class="close-cart" onclick = 'closeFinal()' src="/images/close.svg" alt="">
+                <h1>ENDEREÇO</h1>
+                <div class="final-end">
+                    <input class = 'final-input' type="text" id = 'final-cep' placeholder="CEP">
+                    <input class = 'final-input' type="number" id = 'final-num' placeholder="Nº">
+                </div>
+                <div class="final-end">
+                    <input class = 'final-input' type="text" id = 'final-rua' placeholder="Rua...">
+                    <input class = 'final-input' type="text" id = 'final-comp' placeholder="Complemento">
+                </div>
+                <div class="linha"></div>
+                <p class="payform">Forma de Pagamento</p>
+                <div class="forms-container">
+                    <div class="form">
+                        <label for="pay-box1">Crédito</label>
+                        <input id = 'pay-box1'  name = 'pay-box' type="radio" checked>
+                    </div>
+                    <div class="form">
+                        <label for="pay-box2">Débito</label>
+                        <input  id = 'pay-box2' name = 'pay-box' type="radio">
+                    </div>
+                    <div class="form">
+                        <label for="pay-box3">Dinheiro</label>
+                        <input id = 'pay-box3' name = 'pay-box' type="radio">
+                    </div>
+                </div>
+
+                <div class="final-finish">
+                    <p onclick="makeRequire()">Finalizar tudo!</p>
+                </div>
+            </main>
+        </div>
+
+        <div class="final-container-checked appear" style = 'display: none'>
+            <main>
+                <h1>Pedido concluído!</h1>
+                <img class = 'gif-ok' src="/images/ok.gif" alt="">
+                <p class = 'food-token'>Token do pedido: asdjdwqe4wq45e7wqegf47ds5g7</p>
+                <button>Acompanhar Pedido></button>
+            </main>
+        </div>
+
+        <!-- <div class="white-screen-checked"></div> -->
+
+        <footer class = 'footer filter' onclick="calc()">
+            <main>
+                <img src="/images/cart.svg" alt="">
+                <p> Ver carrinho </p>
+                <p class="total">R$ 00.00</p>
+            </main>
+        </footer>
+        
+       
+
+    </div>
+    
+
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/final.js"></script>
+    <script src="/scripts/ask.js"></script>
+</body>
+</html>

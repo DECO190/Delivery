@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/log_reg.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body onload="loginPageCheck()">
+    <div  name = 'userform' id = 'login_form'>
+        <div id = 'main_container'>
+            <div id = 'login_title'>
+                <h1>LOGIN</h1>
+            </div>
+
+            <div id = 'int_container'>
+                <p>Username:</p>
+                <input id = 'username' name = 'username' type="text">
+                <p>Senha:</p>
+                <input id = 'password' name = 'senha' type="password">
+            </div>
+            <button onclick = 'loginUser()'>Entrar</button>
+        </div> 
+    </div>
+    <a id = 'reg_link' href="/register">Novo por aqui? Cadastre-se agora!</a>
+    
+    <script src="/scripts/login.js"></script>
+</body>
+</html>
